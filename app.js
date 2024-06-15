@@ -1,20 +1,21 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const ClinicRoute = require("./Router/ClinicRoute");
 
 const app = express();
 dotenv.config();
 
 // Set the port
-const port = 3000 ;
+const port =  3000;
 
 app.use(express.json());
 
-// Use environment variable for MongoDB connection string
-const mongoURI =  "mongodb+srv://mohamed:aristoo@cluster0.xezcrdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// MongoDB connection string from environment variable
+const mongoURI =  "your_mongo_connection_string_here";
 
 mongoose
-  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(mongoURI)
   .then(() => {
     console.log("Database connected");
   })
@@ -22,9 +23,8 @@ mongoose
     console.log(err, "Database not connected");
   });
 
-const ClinicRoute = require("./Router/ClinicRoute");
 app.use("/clinic", ClinicRoute);
 
 app.listen(port, () => {
-  console.log(`http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
