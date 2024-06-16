@@ -7,15 +7,14 @@ const app = express();
 dotenv.config();
 
 // Set the port
-const port =  3000;
+const port = 3000;
 
 app.use(express.json());
 
-// MongoDB connection string from environment variable
-const mongoURI =  "your_mongo_connection_string_here";
-
 mongoose
-  .connect(mongoURI)
+  .connect(
+  "mongodb+srv://mohamed:aristoo@cluster0.xezcrdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  )
   .then(() => {
     console.log("Database connected");
   })
