@@ -17,8 +17,8 @@ const getAllClinics = async (req, res) => {
 // Get clinic by ID
 const getById = async (req, res) => {
   try {
-    const clinicName = req.params.name;
-    const clinic = await ClinicModel.findByOne({name: clinicName});
+    const clinicName = req.body.name;
+    const clinic = await ClinicModel.findOne({name: clinicName});
     console.log(clinic);
     res.json(clinic);
   } catch (err) {
