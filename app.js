@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const ClinicRoute = require("./Router/ClinicRoute");
+const PharmacyRoute=require("./Router/PharmacyRoute");
 
 const app = express();
 dotenv.config();
@@ -23,6 +24,7 @@ mongoose
   });
 
 app.use("/clinic", ClinicRoute);
+app.use("/pharmacy",PharmacyRoute)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
