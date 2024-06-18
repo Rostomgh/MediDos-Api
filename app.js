@@ -25,6 +25,7 @@ mongoose
 
 app.use("/clinic", ClinicRoute);
 app.use("/pharmacy",PharmacyRoute)
+app.use("/veterinary",veterinaryRoute)
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

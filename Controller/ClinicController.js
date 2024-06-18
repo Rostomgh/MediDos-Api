@@ -1,4 +1,4 @@
-const ClinicModel = require("../Schema/ClinicSchema");
+const ClinicModel = require("../Model/ClinicSchema");
 const express = require("express");
 const mongoose = require("mongoose");
 
@@ -32,6 +32,8 @@ const CreateClinic = async (req, res) =>  {
     address: req.body.address,
     phone: req.body.phone,
     time: req.body.time,
+    latitude:req.body.latitude,
+    longitude:req.body.longitude
   });
   clinic.save()
     .then((data) => {
