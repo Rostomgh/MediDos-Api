@@ -1,7 +1,7 @@
 const express = require("express");
 const PharmacyRoute = express.Router();
-const{getAllPharmacys}=require("../Controller/PharmacyController");
+const{getAllPharmacys,CreatePharmacy,getByIdpharmacy}=require("../Controller/PharmacyController");
 
 PharmacyRoute.get("/", getAllPharmacys),
-PharmacyRoute.get("/n");
-PharmacyRoute.post("/");
+PharmacyRoute.get("/n",getByIdpharmacy);
+PharmacyRoute.post("/",CreatePharmacy);

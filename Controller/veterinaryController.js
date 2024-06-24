@@ -11,4 +11,4 @@ const getAllVeterinaries = async (req, res) => {
     res.status(500).send(err);
   }
 }
-module.exports = {getAllVeterinaries}
+module.exports = {getAllVeterinaries,}
