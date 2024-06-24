@@ -11,7 +11,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: "http://localhost:5001",
+    origin: "*",
     credentials: true,
   })
 );
@@ -31,7 +31,7 @@ mongoose
   .catch((err) => {
     console.log(err, "Database not connected");
   });
-  
+
 app.use("/", (res, req) => {
   res.json("hello");
 });

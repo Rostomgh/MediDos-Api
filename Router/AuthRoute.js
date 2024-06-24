@@ -22,5 +22,5 @@ module.exports = (app) =>
 
     res.cookie("token", token);
 
-    return res.redirect("/welcome");
+    
   });
