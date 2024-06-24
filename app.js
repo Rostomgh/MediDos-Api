@@ -1,29 +1,32 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const ClinicRoute = require("./Router/ClinicRoute");
-const PharmacyRoute = require("./Router/PharmacyRoute");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+
+const ClinicRoute = require("./Router/ClinicRoute");
+const PharmacyRoute = require("./Router/PharmacyRoute");
+const veterinaryRoute = require("./Router/VeterinaryRoute");
+const AuthRoute = require("./Router/AuthRoute");
 
 const app = express();
 dotenv.config();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:5001",
     credentials: true,
   })
 );
 
-// Set the port
 const port = 3000;
 
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose
   .connect(
-    "mongodb+srv://mohamed:aristoo@cluster0.xezcrdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MONGO_URI
   )
   .then(() => {
     console.log("Database connected");
@@ -32,7 +35,7 @@ mongoose
     console.log(err, "Database not connected");
   });
 
-app.use("/", (res, req) => {
+app.get("/", (req, res) => {
   res.json("hello");
 });
 

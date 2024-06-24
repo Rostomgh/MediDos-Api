@@ -1,5 +1,5 @@
 const express = require("express");
-const veterinaryRoute = express.Router();
+const veterinaryModel = require("../Model/veterinarySchema");
 const{getAllVeterinaries}=require("../Controller/veterinaryController");
 const getAllVeterinaries = async (req, res) => {
   try {
