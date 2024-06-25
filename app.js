@@ -24,7 +24,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // MongoDB connection
-mongoose.connect(Mongo_Db_Url="mongodb+srv://mohamed:aristoo@cluster0.xezcrdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+Mongo_Db_Url=process.env.Mongo_Db_Url
+mongoose.connect(Mongo_Db_Url)
   .then(() => {
     console.log('Database connected');
   })
