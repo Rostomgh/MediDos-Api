@@ -1,26 +1,9 @@
-const jwt = require("jsonwebtoken");
+const express = require('express');
+const AuthRoute = express.Router();
+const { login, signup } = require('../Controller/UserController'); // Ensure correct import path
 
-const getUser = async (username) => {
-  return { userId: 123, password: "123456", username };
-};
+// Route definitions
+AuthRoute.post('/signup', signup); // Ensure signup function is properly imported and defined in UserController
+AuthRoute.post('/login', login); // Ensure login function is properly imported and defined in UserController
 
-module.exports = (app) =>
-  app.post("/login", async (req, res) => {
-    const { username, password } = req.body;
-
-    const user = await getUser(username);
-
-    if (user.password !== password) {
-      return res.status(403).json({
-        error: "invalid login",
-      });
-    }
-
-    delete user.password;
-
-    const token = jwt.sign(user, process.env.MY_SECRET, { expiresIn: "1h" });
-
-    res.cookie("token", token);
-
-    
-  });
+module.exports = AuthRoute;

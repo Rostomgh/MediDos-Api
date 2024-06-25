@@ -1,8 +1,6 @@
-const express = require("express");
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
-const veterinarySchema = new Schema({
+const veterinarySchema = new mongoose.Schema({
   name: { type: String, required: true },
   address: { type: String, required: true },
   phone: { type: String, required: true },
@@ -10,6 +8,7 @@ const veterinarySchema = new Schema({
   latitude: { type: Number, required: true },
   longitude: { type: Number, required: true },
 });
-const veterinaryModel = mongoose.model("veterinary", veterinarySchema);
-module.exports = veterinaryModel;
 
+const VeterinaryModel = mongoose.model("Veterinary", veterinarySchema);
+
+module.exports = VeterinaryModel;

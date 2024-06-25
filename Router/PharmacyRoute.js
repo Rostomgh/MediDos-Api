@@ -5,3 +5,4 @@ const{getAllPharmacys,createPharmacy,getByIdpharmacy}=require("../Controller/Pha
 PharmacyRoute.get("/", getAllPharmacys),
 PharmacyRoute.get("/n",getByIdpharmacy);
 PharmacyRoute.post("/",createPharmacy);
+module.exports=PharmacyRoute;

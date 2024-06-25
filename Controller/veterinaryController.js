@@ -1,14 +1,25 @@
-const express = require("express");
-const veterinaryModel = require("../Model/veterinarySchema");
-const{getAllVeterinaries}=require("../Controller/veterinaryController");
+const VeterinaryModel = require("../Model/veterinarySchema");
+
 const getAllVeterinaries = async (req, res) => {
   try {
-    const viterinary = await veterinaryModel.find();
-    console.log(viterinary);
-    res.json(viterinary);
+    const veterinaries = await VeterinaryModel.find();
+    res.json(veterinaries);
   } catch (err) {
-    console.log(err);
-    res.status(500).send(err);
+    res.status(500).json({ error: err.message });
   }
-}
-module.exports = {getAllVeterinaries,}
+};
+
+const getVeterinaryById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const veterinary = await VeterinaryModel.findById(id);
+    if (!veterinary) {
+      return res.status(404).json({ error: "Veterinary not found" });
+    }
+    res.json(veterinary);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = { getAllVeterinaries, getVeterinaryById };
