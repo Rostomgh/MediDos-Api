@@ -19,27 +19,21 @@ const signup = async (req, res) => {
       throw new Error('User already exists');
     }
 
-    // Validate email format
+// Validate email format
     if (!validator.isEmail(email)) {
       throw new Error('Invalid email format');
     }
-
-    // Hash the password
+  // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create new user
+  // Create new user
     const newUser = await User.create({
       username,
       email,
       password: hashedPassword,
-      status: 'User', // Example status, adjust as needed
+      
     });
-
-    // Generate JWT token
     const token = createToken(newUser._id);
-
-    // Respond with success message and token
-    res.status(201).json({
+     res.status(201).json({
       message: 'User created successfully',
       username: newUser.username,
       email: newUser.email,
@@ -72,12 +66,8 @@ const login = async (req, res) => {
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
       throw new Error('Invalid credentials');
-    }
-
-    // Generate JWT token
+    }  
     const token = createToken(user._id);
-
-    // Respond with user details and token
     res.status(200).json({
       message: 'Login successful',
       username: user.username,
@@ -85,8 +75,7 @@ const login = async (req, res) => {
       token,
     });
   } catch (error) {
-    // Handle errors
-    res.status(500).json({ error: error.message });
+      res.status(500).json({ error: error.message });
   }
 };
 

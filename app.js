@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const ClinicRoute = require('./Router/ClinicRoute');
 const PharmacyRoute = require('./Router/PharmacyRoute');
 const VeterinaryRoute = require('./Router/VeterinaryRoute');
-const AuthRoute = require('./Router/AuthRoute');  // Ensure correct import path
+const AuthRoute = require('./Router/AuthRoute');  
 
 const app = express();
 dotenv.config();
@@ -51,7 +51,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const port =  3000;
+const port = 3000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
