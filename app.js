@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 app.use('/clinic', ClinicRoute);
 app.use('/pharmacy', PharmacyRoute);
 app.use('/veterinary', VeterinaryRoute);
-app.use('/user', AuthRoute);  // Ensure correct route path
+app.use('/user', AuthRoute);  
 
 // Error handling middleware
 app.use((err, req, res, next) => {

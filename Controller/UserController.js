@@ -5,7 +5,7 @@ const validator = require('validator');
 
 // Signup function
 const signup = async (req, res) => {
-  const { username, email, password, picture } = req.body;
+  const { username, email, password, } = req.body;
 
   try {
     // Validate input fields
@@ -32,7 +32,6 @@ const signup = async (req, res) => {
       username,
       email,
       password: hashedPassword,
-      picture,
       status: 'User', // Example status, adjust as needed
     });
 
@@ -83,8 +82,6 @@ const login = async (req, res) => {
       message: 'Login successful',
       username: user.username,
       email: user.email,
-      picture: user.picture,
-      status: user.status,
       token,
     });
   } catch (error) {

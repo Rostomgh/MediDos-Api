@@ -6,29 +6,25 @@ const authMiddleware = async (req, res, next) => {
 
   try {
     if (!authorization) {
-      throw Error("You must be authorized");
+      return res.status(401).json({ error: "You must be authorized" });
     }
+
     const token = authorization.split(" ")[1];
-
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
     const user = await User.findOne({ _id: decoded._id });
-
     if (!user) {
-      throw Error("User not found");
+      return res.status(404).json({ error: "User not found" });
     }
-
-    req.user = {
+      req.user = {
       _id: user._id,
-      name: user.name,
+      username: user.username,
       email: user.email,
-      picture: user.picture,
-      status: user.status,
-    };
 
+    };
     next();
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("Auth middleware error:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
