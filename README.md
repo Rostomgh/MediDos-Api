@@ -39,3 +39,11 @@ Follow these steps to set up the project:
 1. Clone the repository:
    ```bash
    git clone https://github.com/Rostomgh/MediDos-Api.git
+
+ 2. Installe :
+   ```bash
+   npm i
+
+ 2. run :
+   ```bash
+   npm run dev
