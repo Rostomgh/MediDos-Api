@@ -44,6 +44,6 @@ Follow these steps to set up the project:
    ```bash
    npm i
 
- 2. run :
+ 3. run :
    ```bash
    npm run dev
