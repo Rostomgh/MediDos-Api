@@ -22,4 +22,21 @@ const getVeterinaryById = async (req, res) => {
   }
 };
 
-module.exports = { getAllVeterinaries, getVeterinaryById };
+const createVeterinary = async (req, res) => {
+  try {
+    const veterinary = new VeterinaryModel({
+      name: req.body.name,
+      address: req.body.address,
+      phone: req.body.phone,
+      time: req.body.time,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+    });
+    await veterinary.save(); // Ensure to await save() to handle promises correctly
+    res.status(201).json(veterinary); // Respond with the saved veterinary object
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = { getAllVeterinaries, getVeterinaryById, createVeterinary };

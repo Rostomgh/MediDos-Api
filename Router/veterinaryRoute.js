@@ -1,8 +1,9 @@
 const express = require("express");
-const veterinaryRoute = express.Router();
-const { getAllVeterinaries, getVeterinaryById } = require("../Controller/VeterinaryController");
+const VeterinaryRoute = express.Router();
+const { getAllVeterinaries, getVeterinaryById,createVeterinary } = require("../Controller/VeterinaryController");
 
-veterinaryRoute.get("/", getAllVeterinaries);
-veterinaryRoute.get("/:id", getVeterinaryById); // Assuming you want to get by ID
+VeterinaryRoute.get("/", getAllVeterinaries);
+VeterinaryRoute.get("/:id", getVeterinaryById); 
+VeterinaryRoute.post ("/", createVeterinary); // Assuming you want to get by ID
 
-module.exports = veterinaryRoute;
+module.exports = VeterinaryRoute;
