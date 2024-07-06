@@ -7,8 +7,8 @@ const cookieParser = require('cookie-parser');
 // Import your routes and middleware
 const ClinicRoute = require('./Router/ClinicRoute');
 const PharmacyRoute = require('./Router/PharmacyRoute');
-const VeterinaryRoute = require('./Router/VeterinaryRoute');
-const AuthRoute = require('./Router/AuthRoute');  
+const VeterinaryRoute = require('./Router/VeterinaryRoute');  // Correct path
+const AuthRoute = require('./Router/AuthRoute');
 
 const app = express();
 dotenv.config();
@@ -17,14 +17,13 @@ dotenv.config();
 app.use(
   cors({
     origin: '*',
-    
   })
 );
 app.use(express.json());
 app.use(cookieParser());
 
 // MongoDB connection
-Mongo_Db_Url=process.env.Mongo_Db_Url
+const Mongo_Db_Url = process.env.Mongo_Db_Url;
 mongoose.connect(Mongo_Db_Url)
   .then(() => {
     console.log('Database connected');
@@ -42,7 +41,7 @@ app.get('/', (req, res) => {
 app.use('/clinic', ClinicRoute);
 app.use('/pharmacy', PharmacyRoute);
 app.use('/veterinary', VeterinaryRoute);
-app.use('/user', AuthRoute);  
+app.use('/user', AuthRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -55,4 +54,3 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
-
