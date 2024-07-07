@@ -11,11 +11,9 @@ const getAllVeterinaries = async (req, res) => {
 
 const getVeterinaryById = async (req, res) => {
   try {
-    const id = req.params.id;
-    const veterinary = await VeterinaryModel.findById(id);
-    if (!veterinary) {
-      return res.status(404).json({ error: "Veterinary not found" });
-    }
+    const VeterinaryName = req.query.id;
+    const veterinary = await VeterinaryModel.find({name:VeterinaryName});
+    console.log(veterinary);
     res.json(veterinary);
   } catch (err) {
     res.status(500).json({ error: err.message });

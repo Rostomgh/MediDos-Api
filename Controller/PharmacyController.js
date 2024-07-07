@@ -15,7 +15,7 @@ const getAllPharmacys = async (req, res) => {
 
 const getByIdpharmacy = async (req, res) => {
   try {
-    const pharmacyName = req.body.name;
+    const pharmacyName = req.query.name;
     const pharmacy = await pharmacyModel.find({ name: pharmacyName });
     console.log(pharmacy);
     res.json(pharmacy);

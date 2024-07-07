@@ -3,6 +3,6 @@ const PharmacyRoute = express.Router();
 const{getAllPharmacys,createPharmacy,getByIdpharmacy}=require("../Controller/PharmacyController");
 
 PharmacyRoute.get("/", getAllPharmacys),
-PharmacyRoute.get("/n",getByIdpharmacy);
+PharmacyRoute.get("/search",getByIdpharmacy);
 PharmacyRoute.post("/",createPharmacy);
 module.exports=PharmacyRoute;

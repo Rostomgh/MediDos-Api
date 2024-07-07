@@ -5,7 +5,7 @@ const ClinicRoute = express.Router();
 
 // Define routes
 ClinicRoute.get("/", getAllClinics);
-ClinicRoute.get("/n", getById);
+ClinicRoute.get("/search", getById);
 ClinicRoute.post("/",CreateClinic)
 
 module.exports = ClinicRoute;
