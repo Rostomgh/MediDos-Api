@@ -4,14 +4,12 @@ Welcome to the MEDI_DOS API! This API is designed to manage medical entities suc
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Main Use Cases](#main-use-cases)
-- [Contributing](#contributing)
-- [License](#license)
+- [MEDI\_DOS API](#medi_dos-api)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
 
 ## Introduction
 
@@ -41,9 +39,11 @@ Follow these steps to set up the project:
    git clone https://github.com/Rostomgh/MediDos-Api.git
 
  2. Installe :
-   ```bash
+   ```
    npm i
+   ```
 
  3. run :
-   ```bash
+   ```
    npm run dev
+   ```

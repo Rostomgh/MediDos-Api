@@ -9,6 +9,7 @@ const ClinicRoute = require('./Router/ClinicRoute');
 const PharmacyRoute = require('./Router/PharmacyRoute');
 const VeterinaryRoute = require('./Router/VeterinaryRoute');  // Correct path
 const AuthRoute = require('./Router/AuthRoute');
+const ReservationRoute=require('./Router/ReservationRoute');
 
 const app = express();
 dotenv.config();
@@ -42,11 +43,13 @@ app.use('/clinic', ClinicRoute);
 app.use('/pharmacy', PharmacyRoute);
 app.use('/veterinary', VeterinaryRoute);
 app.use('/user', AuthRoute);
+app.use('/reservations',ReservationRoute)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something went wrong!');
+  
 });
 
 // Start server
