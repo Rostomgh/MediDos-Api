@@ -1,5 +1,5 @@
-const express = require("express");
-const { getAllClinics, getById,CreateClinic } = require("../Controller/ClinicController.js");
+import express from "express";
+import { getAllClinics, getById,CreateClinic } from "../Controller/ClinicController.js";
 
 const ClinicRoute = express.Router();
 
@@ -9,4 +9,4 @@ ClinicRoute.get("/", getAllClinics);
 ClinicRoute.get("/search", getById);
 ClinicRoute.post("/",CreateClinic);
 
-module.exports = ClinicRoute;
+export default ClinicRoute;

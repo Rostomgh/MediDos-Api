@@ -1,5 +1,4 @@
-const express = require("express");
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const pharmacySchema = new Schema({
@@ -12,4 +11,6 @@ const pharmacySchema = new Schema({
 });
 
 const pharmacyModel = mongoose.model("Pharmacy", pharmacySchema);
-module.exports = pharmacyModel
+
+
+export default pharmacyModel

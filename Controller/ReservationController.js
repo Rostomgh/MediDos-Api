@@ -1,4 +1,4 @@
-const reservationModel = require("../Model/ReservationShema.js");
+import reservationModel  from  "../Model/ReservationShema.js";
 
 const reserve = async (req, res) => {
   const reservation = new reservationModel({
@@ -32,7 +32,7 @@ const getreservation = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   reserve,
   getreservation
 };

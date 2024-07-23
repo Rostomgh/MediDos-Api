@@ -1,6 +1,4 @@
-const ClinicModel = require("../Model/ClinicSchema.js");
-const express = require("express");
-const mongoose = require("mongoose");
+import  ClinicModel from "../Model/ClinicSchema.js";
 
 // Get all clinics
 const getAllClinics = async (req, res) => {
@@ -45,7 +43,7 @@ const CreateClinic = async (req, res) =>  {
     });
 };
 
-module.exports = {
+export {
   getAllClinics,
   getById,
   CreateClinic

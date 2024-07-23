@@ -1,15 +1,15 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
+import express from 'express';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 // Import your routes and middleware
-const ClinicRoute = require('./router/ClinicRoute.js');
-const PharmacyRoute = require('./router/PharmacyRoute.js');
-const VeterinaryRoute = require('./router/VeterinaryRoute.js');  
-const AuthRoute = require('./router/AuthRoute.js');
-const ReservationRoute=require('./router/ReservationRoute.js');
+import ClinicRoute from './router/ClinicRoute.js';
+import PharmacyRoute from './router/PharmacyRoute.js';
+import VeterinaryRoute from './router/VeterinaryRoute.js';
+import AuthRoute from './router/AuthRoute.js';
+import ReservationRoute from './router/ReservationRoute.js';
 
 const app = express();
 dotenv.config();

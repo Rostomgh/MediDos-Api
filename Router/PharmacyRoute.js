@@ -1,8 +1,12 @@
-const express = require("express");
-const PharmacyRoute = express.Router();
-const{getAllPharmacys,createPharmacy,getByIdpharmacy}=require("../Controller/PharmacyController.js");
+import  express from "express";
+import {getAllPharmacys,createPharmacy,getByIdpharmacy}from "../Controller/PharmacyController.js";
 
+
+
+
+const  PharmacyRoute = express.Router();
+ 
 PharmacyRoute.get("/", getAllPharmacys),
 PharmacyRoute.get("/search",getByIdpharmacy);
 PharmacyRoute.post("/",createPharmacy);
-module.exports=PharmacyRoute;
+export default PharmacyRoute;

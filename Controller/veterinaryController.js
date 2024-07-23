@@ -1,4 +1,4 @@
-const VeterinaryModel = require("../Model/veterinarySchema.js");
+import VeterinaryModel from "../Model/veterinarySchema.js" ;
 
 const getAllVeterinaries = async (req, res) => {
   try {
@@ -37,4 +37,7 @@ const createVeterinary = async (req, res) => {
   }
 };
 
-module.exports = { getAllVeterinaries, getVeterinaryById, createVeterinary };
+export  { getAllVeterinaries, getVeterinaryById, createVeterinary };
+
+
+

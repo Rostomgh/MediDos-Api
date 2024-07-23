@@ -1,7 +1,7 @@
-const User = require('../Model/User.js');
-const createToken = require('../util/tokenCreate.js');
-const bcrypt = require('bcrypt');
-const validator = require('validator');
+import User  from  '../Model/User.js';
+import createToken  from  '../util/tokenCreate.js';
+import bcrypt  from  'bcrypt';
+import validator  from  'validator';
 
 // Signup function
 const signup = async (req, res) => {
@@ -53,33 +53,34 @@ const login = async (req, res) => {
   try {
     // Validate input fields
     if (!email || !password) {
-      throw new Error('Please provide email and password');
+      return res.status(233).json({ error: 'Please fill all required fields' });  
     }
 
     // Check if user exists
     const user = await User.findOne({ email });
     if (!user) {
-      throw new Error('Invalid credentials');
+      // we use 401 for unauthorized for both email and password for security reason , but we can use 404 for not found
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
-
     // Validate password
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      throw new Error('Invalid credentials');
+      return res.status(401).json({ error: 'Invalid credentials' });
     }  
     const token = createToken(user._id);
+    delete user.password;
     res.status(200).json({
       message: 'Login successful',
-      username: user.username,
-      email: user.email,
+      ...user,
       token,
     });
   } catch (error) {
-      res.status(500).json({ error: error.message });
+    // 500 for internal server error
+      return  res.status(500).json({ error: error.message });
   }
 };
 
-module.exports = {
+export {
   signup,
   login,
 };

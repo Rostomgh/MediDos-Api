@@ -1,6 +1,4 @@
-const pharmacyModel = require("../Model/PharmacySchema.js");
-const express = require("express");
-const mongoose = require("mongoose");
+import pharmacyModel  from "../Model/PharmacySchema.js";
 
 const getAllPharmacys = async (req, res) => {
   try {
@@ -43,7 +41,7 @@ const createPharmacy = async (req, res) => {
   }
 };
 
-module.exports = { 
+export{ 
   getAllPharmacys, 
   getByIdpharmacy, 
   createPharmacy 

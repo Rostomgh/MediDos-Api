@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const veterinarySchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -11,4 +11,5 @@ const veterinarySchema = new mongoose.Schema({
 
 const VeterinaryModel = mongoose.model("Veterinary", veterinarySchema);
 
-module.exports = VeterinaryModel;
+
+export default VeterinaryModel

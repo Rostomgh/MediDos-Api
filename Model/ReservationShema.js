@@ -1,5 +1,7 @@
-const express=require("express");
-const mongoose=require("mongoose");
+import mongoose from "mongoose";
+
+
+
 const Schema=mongoose.Schema;
 const reservationSchema=new Schema({
   name:{type:String,required:true},
@@ -10,4 +12,8 @@ const reservationSchema=new Schema({
   })
 
 const reservationModel=mongoose.model("Reservation",reservationSchema);
-module.exports=reservationModel
+
+
+
+
+export default reservationModel

@@ -1,9 +1,9 @@
-const express = require("express");
+import  express from  "express";
+import  { getAllVeterinaries, getVeterinaryById, createVeterinary } from  "../Controller/VeterinaryController.js";
 const VeterinaryRoute = express.Router();
-const { getAllVeterinaries, getVeterinaryById, createVeterinary } = require("../Controller/VeterinaryController.js");
 
 VeterinaryRoute.get("/", getAllVeterinaries);
 VeterinaryRoute.get("/search", getVeterinaryById); 
 VeterinaryRoute.post("/", createVeterinary); // Assuming you want to get by ID
 
-module.exports = VeterinaryRoute;
+export default VeterinaryRoute;
