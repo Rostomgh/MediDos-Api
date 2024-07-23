@@ -1,6 +1,6 @@
 const express = require("express");
 const ReservationRoute = express.Router();
-const { reserve, getreservation } = require("../Controller/ReservationController");
+const { reserve, getreservation } = require("../Controller/ReservationController.js");
 
 ReservationRoute.post("/", reserve);
 ReservationRoute.get("/", getreservation);

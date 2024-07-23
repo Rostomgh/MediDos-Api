@@ -1,4 +1,4 @@
-const VeterinaryModel = require("../Model/veterinarySchema");
+const VeterinaryModel = require("../Model/veterinarySchema.js");
 
 const getAllVeterinaries = async (req, res) => {
   try {

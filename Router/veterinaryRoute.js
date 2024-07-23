@@ -1,6 +1,6 @@
 const express = require("express");
 const VeterinaryRoute = express.Router();
-const { getAllVeterinaries, getVeterinaryById, createVeterinary } = require("../Controller/VeterinaryController");
+const { getAllVeterinaries, getVeterinaryById, createVeterinary } = require("../Controller/VeterinaryController.js");
 
 VeterinaryRoute.get("/", getAllVeterinaries);
 VeterinaryRoute.get("/search", getVeterinaryById); 

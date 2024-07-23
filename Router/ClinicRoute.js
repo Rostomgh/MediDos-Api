@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllClinics, getById,CreateClinic } = require("../Controller/ClinicController");
+const { getAllClinics, getById,CreateClinic } = require("../Controller/ClinicController.js");
 
 const ClinicRoute = express.Router();
 

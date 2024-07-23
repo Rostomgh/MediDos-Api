@@ -1,4 +1,4 @@
-const ClinicModel = require("../Model/ClinicSchema");
+const ClinicModel = require("../Model/ClinicSchema.js");
 const express = require("express");
 const mongoose = require("mongoose");
 

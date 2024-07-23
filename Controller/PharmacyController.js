@@ -1,4 +1,4 @@
-const pharmacyModel = require("../Model/PharmacySchema");
+const pharmacyModel = require("../Model/PharmacySchema.js");
 const express = require("express");
 const mongoose = require("mongoose");
 
