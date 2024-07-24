@@ -4,6 +4,6 @@ const VeterinaryRoute = express.Router();
 
 VeterinaryRoute.get("/", getAllVeterinaries);
 VeterinaryRoute.get("/search", getVeterinaryById); 
-VeterinaryRoute.post("/", createVeterinary); // Assuming you want to get by ID
+VeterinaryRoute.post("/", createVeterinary); 
 
-export default VeterinaryRoute;
+export default veterinaryRoute;

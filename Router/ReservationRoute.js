@@ -10,4 +10,4 @@ ReservationRoute.get("/", getreservation);
 
 
 
-export default ReservationRoute;
+export default reservationRoute;

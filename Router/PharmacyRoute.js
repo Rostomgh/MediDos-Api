@@ -9,4 +9,4 @@ const  PharmacyRoute = express.Router();
 PharmacyRoute.get("/", getAllPharmacys),
 PharmacyRoute.get("/search",getByIdpharmacy);
 PharmacyRoute.post("/",createPharmacy);
-export default PharmacyRoute;
+export default pharmacyRoute;

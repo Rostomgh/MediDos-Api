@@ -9,4 +9,4 @@ ClinicRoute.get("/", getAllClinics);
 ClinicRoute.get("/search", getById);
 ClinicRoute.post("/",CreateClinic);
 
-export default ClinicRoute;
+export default clinicRoute;

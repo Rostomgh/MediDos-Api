@@ -10,4 +10,4 @@ const  AuthRoute = express.Router();
 AuthRoute.post("/signup", signup);
 AuthRoute.post("/login", login);
 //export module
-export default AuthRoute;
+export default authRoute;
