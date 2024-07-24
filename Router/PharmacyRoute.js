@@ -4,9 +4,9 @@ import {getAllPharmacys,createPharmacy,getByIdpharmacy}from "../Controller/Pharm
 
 
 
-const  PharmacyRoute = express.Router();
+const  pharmacyRoute = express.Router();
  
-PharmacyRoute.get("/", getAllPharmacys),
-PharmacyRoute.get("/search",getByIdpharmacy);
-PharmacyRoute.post("/",createPharmacy);
+pharmacyRoute.get("/", getAllPharmacys),
+pharmacyRoute.get("/search",getByIdpharmacy);
+pharmacyRoute.post("/",createPharmacy);
 export default pharmacyRoute;

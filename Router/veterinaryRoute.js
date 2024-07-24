@@ -1,9 +1,9 @@
 import  express from  "express";
 import  { getAllVeterinaries, getVeterinaryById, createVeterinary } from  "../Controller/VeterinaryController.js";
-const VeterinaryRoute = express.Router();
+const veterinaryRoute = express.Router();
 
-VeterinaryRoute.get("/", getAllVeterinaries);
-VeterinaryRoute.get("/search", getVeterinaryById); 
-VeterinaryRoute.post("/", createVeterinary); 
+veterinaryRoute.get("/", getAllVeterinaries);
+veterinaryRoute.get("/search", getVeterinaryById); 
+veterinaryRoute.post("/", createVeterinary); 
 
 export default veterinaryRoute;

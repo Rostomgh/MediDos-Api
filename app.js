@@ -5,11 +5,11 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 // Import your routes and middleware
-import ClinicRoute from './router/clinicRoute.js';
-import PharmacyRoute from './router/pharmacyRoute.js';
-import VeterinaryRoute from './router/veterinaryRoute.js';
-import AuthRoute from './router/authRoute.js';
-import ReservationRoute from './router/reservationRoute.js';
+import clinicRoute from './router/clinicRoute.js';
+import pharmacyRoute from './router/pharmacyRoute.js';
+import veterinaryRoute from './router/veterinaryRoute.js';
+import authRoute from './router/authRoute.js';
+import reservationRoute from './router/reservationRoute.js';
 
 const app = express();
 dotenv.config();
@@ -39,11 +39,11 @@ app.get('/', (req, res) => {
 });
 
 // Route setup
-app.use('/clinic', ClinicRoute);
-app.use('/pharmacy', PharmacyRoute);
-app.use('/veterinary', VeterinaryRoute);
-app.use('/user', AuthRoute);
-app.use('/reservations',ReservationRoute)
+app.use('/clinic', clinicRoute);
+app.use('/pharmacy', pharmacyRoute);
+app.use('/veterinary', veterinaryRoute);
+app.use('/user', authRoute);
+app.use('/reservations',reservationRoute)
 
 // Error handling middleware
 app.use((err, req, res, next) => {

@@ -4,10 +4,10 @@ import { login, signup } from "../Controller/UserController.js";
 
 
 
-const  AuthRoute = express.Router();
+const  authRoute = express.Router();
 
 // Route definitions
-AuthRoute.post("/signup", signup);
-AuthRoute.post("/login", login);
+authRoute.post("/signup", signup);
+authRoute.post("/login", login);
 //export module
 export default authRoute;

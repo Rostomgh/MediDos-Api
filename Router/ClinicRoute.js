@@ -1,12 +1,12 @@
 import express from "express";
 import { getAllClinics, getById,CreateClinic } from "../Controller/ClinicController.js";
 
-const ClinicRoute = express.Router();
+const clinicRoute = express.Router();
 
 // Define routes
 
-ClinicRoute.get("/", getAllClinics);
-ClinicRoute.get("/search", getById);
-ClinicRoute.post("/",CreateClinic);
+clinicRoute.get("/", getAllClinics);
+clinicRoute.get("/search", getById);
+clinicRoute.post("/",CreateClinic);
 
 export default clinicRoute;
