@@ -5,11 +5,11 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
 // Import your routes and middleware
-import clinicRoute from './router/clinicRoute.js';
-import pharmacyRoute from './router/pharmacyRoute.js';
-import veterinaryRoute from './router/veterinaryRoute.js';
-import authRoute from './router/authRoute.js';
-import reservationRoute from './router/reservationRoute.js';
+import clinicRoute from './src/router/clinicRoute.js';
+import pharmacyRoute from './src/router/pharmacyRoute.js';
+import veterinaryRoute from './src/router/veterinaryRoute.js';
+import authRoute from './src/router/authRoute.js';
+import reservationRoute from './src/router/reservationRoute.js';
 
 const app = express();
 dotenv.config();
