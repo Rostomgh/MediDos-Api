@@ -1,5 +1,5 @@
 import  express from  "express";
-import  { getAllVeterinaries, getVeterinaryById, createVeterinary } from  "../Controller/VeterinaryController.js";
+import  { getAllVeterinaries, getVeterinaryById, createVeterinary } from  "../Controller/veterinaryController.js";
 const veterinaryRoute = express.Router();
 
 veterinaryRoute.get("/", getAllVeterinaries);
